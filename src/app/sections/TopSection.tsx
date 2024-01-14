@@ -7,16 +7,8 @@ export default function TopSection() {
 
     // framer motion animations
     const hoverAnimation1 = {
-        scale: 1.05,
-        rotate: 5,
-        transition: { type: "spring", stiffness: 300 }
-    };
-
-    const hoverAnimation2 = {
-        scale: 1.05,
-        rotate: -5,
-        transition: { type: "spring", stiffness: 300 }
-    };
+        color: "rgba(255, 255, 255, 1)",
+    }
 
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const controls = useAnimationControls();
@@ -51,24 +43,11 @@ export default function TopSection() {
                     <p className='text-xl tracking-normal text-zinc-600 font-extralight'>
                         Passionate Student Developer: Bridging Creativity and Technology to Shape Tomorrow.
                     </p>
-
+                    <motion.a href="#about" whileHover={hoverAnimation1} className="cursor-pointer text-2xl font-medium text-zinc-400 py-14 flex justify-start">
+                        Get to know me !
+                    </motion.a>
                 </div>
             </div>
-
-            <motion.div
-                animate={controls}
-                style={{
-                    position: 'fixed',
-                    top: mousePosition.y,
-                    left: mousePosition.x,
-                    width: '1px',
-                    height: '1px',
-                    borderRadius: '50%',
-                    backgroundColor: 'transparent',
-                    pointerEvents: 'none',
-                    zIndex: 1000
-                }}
-            />
 
         </main >
     )
