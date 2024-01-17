@@ -35,11 +35,11 @@ export default function TopSection() {
 
 
     return (
-        <main className="flex h-[800px] flex-col items-center justify-center mesh-bg" onMouseMove={handleMouseMove} id="landing">
+        <main className="flex h-[800px] flex-col items-center justify-center mesh-bg" onMouseMove={handleMouseMove} id="home">
             <div className="flex flex-row items-center w-4/5 justify-evenly">
-                <div className='flex flex-col gap-7 text-7xl tracking-wide w-1/3'>
-                    <AnimatedWord>Noah</AnimatedWord>
-                    <AnimatedWord>Blanchard</AnimatedWord>
+                <div className='flex flex-col gap-7 text-7xl text-white tracking-wide w-1/3'>
+                    <AnimatedWord>Wsh</AnimatedWord>
+                    <AnimatedWord>BienOuQu</AnimatedWord>
                     <p className='text-xl tracking-normal text-zinc-600 font-extralight'>
                         Passionate Student Developer: Bridging Creativity and Technology to Shape Tomorrow.
                     </p>
@@ -72,7 +72,7 @@ const AnimatedLetter = ({ children }) => {
             transition: { duration: 0 }
         });
         await controls.start({
-            textShadow: "0 0 0px rgba(0, 255, 255, 1)",
+            textShadow: "0 0 0px rgba(0, 255, 255, 0)",
             transition: { duration: 1.5 }
         });
     };
@@ -80,6 +80,13 @@ const AnimatedLetter = ({ children }) => {
     return (
         <motion.span
             animate={controls}
+            drag
+            dragConstraints={{
+                top: -20,
+                left: -20,
+                right: 20,
+                bottom: 20,
+            }}
             whileHover={{
                 scale: 1.2,
             }}

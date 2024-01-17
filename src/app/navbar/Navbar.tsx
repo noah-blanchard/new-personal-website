@@ -6,7 +6,7 @@ export default function Navbar() {
     const [selected, setSelected] = useState(0);
 
     return (
-        <nav className="mesh-bg z-10 fixed w-screen flex justify-center items-center h-16">
+        <nav className="nav-bg z-10 fixed w-screen flex justify-center items-center h-16">
             <ul className="flex gap-x-10">
                 <NavbarItem href="#home" propagate={() => setSelected(0)} isSelected={selected === 0}>Home</NavbarItem>
                 <NavbarItem href="#about" propagate={() => setSelected(1)} isSelected={selected === 1}>About</NavbarItem>
