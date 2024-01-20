@@ -40,8 +40,8 @@ export default function TopSection() {
     >
       <div className="flex flex-row items-center w-4/5 justify-evenly">
         <div className="flex flex-col gap-7 text-7xl text-white tracking-wide w-1/3">
-          <AnimatedWord>Wsh</AnimatedWord>
-          <AnimatedWord>BienOuQu</AnimatedWord>
+          <AnimatedWord>Noah</AnimatedWord>
+          <AnimatedWord>Blanchard</AnimatedWord>
           <p className="text-xl tracking-normal text-zinc-600 font-extralight">
             Passionate Student Developer: Bridging Creativity and Technology to
             Shape Tomorrow.
