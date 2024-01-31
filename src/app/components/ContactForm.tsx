@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
@@ -31,12 +32,13 @@ const ContactForm: React.FC = () => {
 
         setLoading(true);
 
-        const webhookUrl = 'https://discord.com/api/webhooks/1202331337714040873/LBWWlxrXNtafvGjV0rIWYmO7uF2GaAVW3XOeI1Z_8x1kkPQuSXQVuOmIRo0ounqKDytw';
+        const webhookUrl = process.env.NEXT_PUBLIC_WEBHOOK_URL;
         const messageData = {
             content: `**${name}** (${email}):\n**Date** : ${new Date().toLocaleString()}\n----------------------------------------\n\n${message}`,
         };
 
         try {
+            if (!webhookUrl) throw new Error('Discord webhook URL not found. Please check your environment variables.');
             const response = await axios.post(webhookUrl, messageData);
 
             if (response.status === 204) {

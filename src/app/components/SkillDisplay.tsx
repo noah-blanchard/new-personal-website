@@ -10,8 +10,6 @@ export default function SkillDisplay({
 }) {
     const [isHovered, setIsHovered] = useState(false);
 
-    console.log(isHovered)
-
     const handleMouseEnter = () => {
         console.log("enter")
         setIsHovered(true);
