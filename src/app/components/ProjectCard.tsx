@@ -1,4 +1,4 @@
-import { Project } from "../types/project";
+import Project from "../types/project";
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ interface Props {
 
 const ProjectCard: React.FC<Props> = ({ project, showGitHubLink = true }) => {
     return (
-        <div className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+        <div className="flex flex-col w-72 rounded-lg shadow-lg mesh-bg">
             <Link href={`/projects/${project.slug}`}>
                 <Image
                     className="w-full cursor-pointer object-cover"

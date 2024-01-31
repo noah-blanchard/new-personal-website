@@ -1,12 +1,14 @@
 export default function IconTitle({
     icon,
-    title
+    title,
+    className = ""
 }: {
     icon: React.ReactNode,
     title: string
+    className?: string
 }) {
     return (
-        <div className="flex flex-row gap-x-2 text-lg">
+        <div className={`${className} flex flex-row gap-x-2 text-xl`}>
             {icon}
             <h1>{title}</h1>
         </div>
